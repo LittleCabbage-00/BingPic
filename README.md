@@ -36,9 +36,9 @@ dotnet publish -r win-x64 -c Release --self-contained
 > 可请求分辨率：UHD , 1920x1200 , 1920x1080 , 1366x768 , 1280x768 ,1024x768 , 800x600 , 800x480 , 768x1280 ,720x1280 , 640x480 , 480x800 , 400x240 , 320x240 , 240x320
 ## 使用说明
 本部分分为`Batch`和`Single`，`Batch`是批量下载，`Single`为指定日期单个下载，两个的使用方法类似
-对于批量下载，使用时请自行修改`start_date`和`end_date`，运行时，将会在程序运行的目录创建以年份为单位的文件夹，并将对应年份的图片放进去
-![image](https://github.com/user-attachments/assets/4852aa29-098f-4129-815d-20d2e2bf8250)
-对于单个文件，使用时请自行修改 `date`，运行时将会把下载的图片自动放在程序运行的目录中
+对于批量下载，使用时请自行修改`start_date`和`end_date`，运行时，将会在程序运行的目录创建以年份为单位的文件夹，并将对应年份的图片放进去 \
+![image](https://github.com/user-attachments/assets/4852aa29-098f-4129-815d-20d2e2bf8250) \ 
+对于单个文件，使用时请自行修改 `date`，运行时将会把下载的图片自动放在程序运行的目录中 \ 
 ![image](https://github.com/user-attachments/assets/8a5be56a-74e8-4b44-8fce-f973e7be9168)
 
 > ps:由于使用的是第三方api，在实际使用时发现，4k图片在`2019-05-09`之前，并没有达到4k分辨率，如对`2019-05-09`之前的4k图片有需要，请寻找其他第三方api
