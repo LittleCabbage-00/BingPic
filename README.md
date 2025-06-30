@@ -51,9 +51,15 @@ pip install requests
 
 ## Check_shell
 此部分是基于`zsh`编写的脚本，使用正则表达式匹配当前文件夹内的图片文件名，并打印出缺失的图片名称，请根据`1080p`和`4k`的文件夹，分别使用脚本，具体有两种使用方式 \
-第一个是直接运行该脚本，它会检查出今年从`01-01`到运行脚本的日期之间是否有图片遗漏，如果有，则会打印出遗漏的图片名称，没有，则会打印出`no pic`
+第一个是直接运行该脚本，它会检查出今年从`01-01`到运行脚本的日期之间是否有图片遗漏，如果有，则会打印出遗漏的图片名称，没有，则会打印出`no pic`  \
+![image](https://github.com/user-attachments/assets/d8d58751-32cc-499b-bb53-b0bbf2b30f61)
+
 第二个是在脚本后面跟上年份，例如：
 ```shell
 ./check_pic.sh 2023 
 ```
-则该脚本会打印出2023年缺失的图片名称，如果没有，也会打印出`no pic`
+则该脚本会打印出2023年缺失的图片名称，如果没有，也会打印出`no pic`  \
+![image](https://github.com/user-attachments/assets/3da7c51f-bc8f-4d66-9d8d-740a218d625e)  \
+如果存在遗漏，则会在下面直接打印出缺失的图片名称  \
+![image](https://github.com/user-attachments/assets/a936d9e7-c7a1-45e0-91af-3d4a46ebc7a0)
+
