@@ -1,6 +1,6 @@
 因为本人比较喜欢`Bing`的每日一图，在树莓派4b上也使用[1panel](https://github.com/1Panel-dev/1Panel)部署了每天下载的脚本，`1080p`与`4k`分别下载，目前已经正常运行一年有余，现在拿出来进行分享
 本项目有三个部分组成，`Csharp`，`Python`和`Check_shell`，第一个是编译为单个可执行文件，配合定时任务在本地获取图片，第二个是在发现计划任务执行错误或者忘记执行时，补漏用，最后一个是在树莓派上直接运行的脚本，检查是否存在遗漏
-## 最新 Bing 每日一图
+## Bing 每日一图 · 最近 7 天
 
 <!-- bing-daily:start -->
 <!-- bing-date: 2026-11-14 -->
@@ -17,7 +17,7 @@
 <p>© Juan Romero/Cavan Images</p>
 <!-- bing-daily:end -->
 
-GitHub Actions 每天北京时间 20:17 检查更新，也可以在 [Actions](https://github.com/LittleCabbage-00/BingPic/actions/workflows/bing-daily.yml) 手动运行。工作流检查 [npanuhin 归档](https://github.com/npanuhin/Bing-Wallpaper-Archive) 最近 5 天，展示三区都已发布的最新一天。US 为基准，CN 和 JP 按分辨率去重。README 显示 1080p 预览，并在可用时附上 Bing 的 UHD 原图链接。
+GitHub Actions 每天北京时间 20:17 查阅 [npanuhin 归档](https://github.com/npanuhin/Bing-Wallpaper-Archive)，从 US、CN、JP 都已收录的最新一天往前展示 7 天。点击各区缩略图可打开 1080p 图片。有通过尺寸校验的 UHD 图片时会附上 4K 原图链接。也可在 [Actions](https://github.com/LittleCabbage-00/BingPic/actions/workflows/bing-daily.yml) 手动更新。
 
 ## 下载三区图片
 

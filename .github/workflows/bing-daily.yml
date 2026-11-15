@@ -34,7 +34,7 @@ jobs:
           OWNER: ${{ github.repository_owner }}
           OWNER_ID: ${{ github.repository_owner_id }}
         run: |
-          git add -- README.md
+          git add -A -- README.md assets/bing-week
           if git diff --cached --quiet; then
             exit 0
           fi
