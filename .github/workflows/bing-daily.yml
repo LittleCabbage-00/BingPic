@@ -27,7 +27,8 @@ jobs:
           python3 -m venv "$RUNNER_TEMP/bingpic"
           "$RUNNER_TEMP/bingpic/bin/python" -m pip install -r Python/requirements-daily.txt
       - name: Update README preview
-        run: "$RUNNER_TEMP/bingpic/bin/python" Python/bing_daily.py readme
+        run: |
+          "$RUNNER_TEMP/bingpic/bin/python" Python/bing_daily.py readme
       - name: Commit the new preview
         env:
           OWNER: ${{ github.repository_owner }}
