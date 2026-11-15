@@ -1,0 +1,43 @@
+name: Update Bing wallpaper
+
+on:
+  schedule:
+    - cron: '17 20 * * *'
+      timezone: Asia/Shanghai
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bing-daily-readme
+  cancel-in-progress: false
+
+jobs:
+  update:
+    if: github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0 # v7.0.0
+        with:
+          ref: ${{ github.event.repository.default_branch }}
+      - name: Install image dependency
+        run: |
+          python3 -m venv "$RUNNER_TEMP/bingpic"
+          "$RUNNER_TEMP/bingpic/bin/python" -m pip install -r Python/requirements-daily.txt
+      - name: Update README preview
+        run: "$RUNNER_TEMP/bingpic/bin/python" Python/bing_daily.py readme
+      - name: Commit the new preview
+        env:
+          OWNER: ${{ github.repository_owner }}
+          OWNER_ID: ${{ github.repository_owner_id }}
+        run: |
+          git add -- README.md
+          if git diff --cached --quiet; then
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit --author "$OWNER <$OWNER_ID+$OWNER@users.noreply.github.com>" -m 'Update Bing daily wallpaper'
+          git push origin "HEAD:refs/heads/$GITHUB_REF_NAME"

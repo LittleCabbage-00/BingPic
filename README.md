@@ -1,5 +1,23 @@
 因为本人比较喜欢`Bing`的每日一图，在树莓派4b上也使用[1panel](https://github.com/1Panel-dev/1Panel)部署了每天下载的脚本，`1080p`与`4k`分别下载，目前已经正常运行一年有余，现在拿出来进行分享
 本项目有三个部分组成，`Csharp`，`Python`和`Check_shell`，第一个是编译为单个可执行文件，配合定时任务在本地获取图片，第二个是在发现计划任务执行错误或者忘记执行时，补漏用，最后一个是在树莓派上直接运行的脚本，检查是否存在遗漏
+## 最新 Bing 每日一图
+
+<!-- bing-daily:start -->
+<!-- bing-daily:end -->
+
+GitHub Actions 每天北京时间 20:17 检查更新，也可以在 [Actions](https://github.com/LittleCabbage-00/BingPic/actions/workflows/bing-daily.yml) 手动运行。工作流检查 [npanuhin 归档](https://github.com/npanuhin/Bing-Wallpaper-Archive) 最近 5 天，展示三区都已发布的最新一天。US 为基准，CN 和 JP 按分辨率去重。README 显示 1080p 预览，并在可用时附上 Bing 的 UHD 原图链接。
+
+## 下载三区图片
+
+需要 Python 3.10 或更新版本。以下命令回查最近 5 天，按 `Image/Bing/{1080p,4k}/{US,CN,JP}` 保存图片。
+
+```shell
+python -m pip install -r Python/requirements-daily.txt
+python Python/bing_daily.py download Image/Bing
+```
+
+可加 `--date YYYY-MM-DD` 指定回查窗口的最后一天。脚本会跳过已有文件。CN 和 JP 的同日图片与 US 指纹相近且 US 像素数不小于区域图时，跳过区域副本。4K 只取 2019-05-01 起的 Bing UHD 原图，下载后检查实际像素尺寸。
+
 ## CSharp
 本部分采用官方api获取下载链接 [官方接口](https://www.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1) ，使用了第三方库`Newtonsoft.Json`，编译前请下载好
 ```shell
