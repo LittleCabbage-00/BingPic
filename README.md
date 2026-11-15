@@ -3,6 +3,18 @@
 ## 最新 Bing 每日一图
 
 <!-- bing-daily:start -->
+<!-- bing-date: 2026-11-14 -->
+**图片日期：2026-11-14**
+
+### US
+
+<p>Victoria Harbour, Hong Kong, China</p>
+
+<img src="https://www.bing.com/th?id=OHR.BlueHK_EN-US7870996687_1920x1080.jpg" alt="Victoria Harbour, Hong Kong, China" width="960">
+
+[4K 原图](https://www.bing.com/th?id=OHR.BlueHK_EN-US7870996687_UHD.jpg)
+
+<p>© Juan Romero/Cavan Images</p>
 <!-- bing-daily:end -->
 
 GitHub Actions 每天北京时间 20:17 检查更新，也可以在 [Actions](https://github.com/LittleCabbage-00/BingPic/actions/workflows/bing-daily.yml) 手动运行。工作流检查 [npanuhin 归档](https://github.com/npanuhin/Bing-Wallpaper-Archive) 最近 5 天，展示三区都已发布的最新一天。US 为基准，CN 和 JP 按分辨率去重。README 显示 1080p 预览，并在可用时附上 Bing 的 UHD 原图链接。
